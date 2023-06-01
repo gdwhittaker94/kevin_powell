@@ -1,0 +1,269 @@
+/* Challenge
+    - Make nav menu work for both small + large screens
+    - Mobile-first --> then add large screen styles
+    inside the existing media query
+*/
+
+/** GENERAL/UNIVERSAL */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.section-title {
+    color: #87629A;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #23424A;
+    font-weight: 900;
+    background-color: #38CFD9;
+    padding: .75em 2em;
+    border-radius: 100px;
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: .75;
+}
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* added for nav-toggle positioning */
+    position: relative;
+}
+
+header {
+    background: #136c72;
+    padding: 1em 0;
+    text-align: center;
+}
+
+/** NAVBAR */
+
+.nav {
+    width: 100%;
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+}
+
+.nav__list {
+    margin: 0;
+}
+
+.nav__list li, a {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: Roboto, sans-serif;
+    text-transform: uppercase;
+    margin-block-start: 10px;
+}
+
+.nav__list {
+    padding: 10px;
+}
+
+.nav__list--secondary li:first-of-type {
+    margin-bottom: 15px;
+}
+
+.nav__link--button {
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 5px 10px;
+    color: #136c72;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    opacity: 0.65;
+}
+
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: #072A2D;
+    color: white;
+    transition: opacity 250ms ease;
+
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+.logo {
+    height: 30px;
+}
+
+/** HERO */
+
+.hero {
+    padding: 100px 0;
+    background-color: #23424A;
+    color: #FFF;
+}
+
+.hero__img {
+    margin-top: 2em;
+}
+
+
+.hero p {
+    margin-bottom: 3em;
+}
+
+/** MAIN + SIDEBAR */
+
+.main {
+    margin-top: 3em;
+}
+
+
+.sidebar {
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+    background-color: #136c72;
+
+}
+
+/** MEDIA QUERIES */
+
+@media (min-width: 800px) {
+
+    .row {
+        display: flex;
+        min-height: 40px;
+        align-items: center;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+        height: auto;
+        justify-content: flex-end;
+        /* position: relative; */
+    }
+
+    .nav__list--primary, .nav__list--secondary {
+        display: flex;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        height: 40px;
+        line-height: auto;
+    }
+
+    .nav__list--primary {
+        margin: 0 auto;
+    }
+    /*? Forgot again: have pushed items to end with 'flex-end' and then use margin L/R 'auto' in order to make this primary list eat up the available space and create margins either side of it. */
+
+    .nav__list--secondary li:first-of-type {
+        margin-bottom: 0;
+    }
+
+    .nav__list li a {
+        margin-inline-start: 20px;
+    }
+
+    .nav__list li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav__item {
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero__text {
+        width: 62%;
+    }
+
+    .hero__img {
+        width: 32%;
+        align-self: flex-start;
+        margin: 0;
+    }
+
+    .primary-content {
+        width: 62%;
+    }
+
+    .sidebar {
+        width: 32%;
+    }
+
+}

@@ -1,0 +1,258 @@
+/** ACROSS WHOLE PAGE */
+
+html{
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  --main-color: #23424A;
+  --white: hsl(170,0%,100%);
+  --bright-blue: #38CFD9;
+  --bright-blue-hover: #32b9c3;
+  --h2-color: #87629A;
+  --secondary-color: #136C72;
+  --dark-grey: #3A3A3A;
+}
+
+.content-container, .main__container, .nav__container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+/** NAV BAR */
+
+.nav {
+  background-color: var(--secondary-color);
+  min-block-size: 4vh;
+  padding: 10px;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav__list--primary {
+  margin: 0 auto;
+}
+/*? ^^ Margin 'auto' for L/R sides in order to center this part of nav bar --> simple solution! */
+
+.nav__item {
+  list-style: none;
+  margin-left: 40px;
+}
+/*? ^^ Margin-left for each item to create gaps in between them in nav bar */
+
+.nav__item--white {
+  background-color: var(--white);
+  border-radius: 100px;
+  width: 80px;
+  height: auto;
+  padding: 6px 0;
+  text-align: center;
+}
+
+.nav__item--white:hover,
+.nav__item--white:focus {
+  background-color: hsl(170,0%,90%);
+}
+
+.nav__item--white a,
+.nav__item--white a:hover,
+.nav__item--white a:focus  {
+  color: var(--dark-grey);
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color:hsl(170,0%,90%);
+}
+
+/** HERO SECTION */
+
+.hero {
+  background-color: var(--main-color);
+}
+
+.hero__container {
+  min-height: 50vh;
+  padding: 7vh 0 0 0;
+  display: flex;
+  justify-content:space-between;
+  align-items: flex-start;
+}
+
+.hero__text-wrapper, .flexbox__l-col {
+  width: 65%;
+}
+
+.hero__header {
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.hero__text {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-top: 3%;
+  letter-spacing: 1px;
+  line-height: 2.5rem;
+}
+
+.hero__button {
+  margin-top: 3%;
+  width: fit-content;
+  color: var(--main-color);
+  border: 2px solid blanchedalmond;
+  background-color: var(--bright-blue);
+  border: none;
+  border-radius: 100px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero__button:hover, .hero__button:focus {
+  background-color: var(--bright-blue-hover)
+}
+
+.hero__image-wrapper, .flexbox__r-col {
+  width: 30%;
+}
+
+/** MAIN SECTION */
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 0
+}
+
+.flexbox__r-col {
+  background-color: var(--secondary-color);
+  padding: 0 3%;
+}
+
+.flexbox__h2 {
+  font-size: 2.3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.flexbox__text {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.flexbox__h2--purple,
+.flexbox__text--gray {
+  text-align: left;
+}
+
+.flexbox__h2--purple {
+  color: var(--h2-color);
+}
+
+.flexbox__text--gray {
+  color: var(--dark-grey);
+}
+
+.flexbox__h2--white,
+.flexbox__text--white {
+  color: var(--white);
+}
+
+.flexbox__r-col:last-child {
+  padding-bottom: 20px;
+}
+
+
+/** MAIN + SECTION ROWS */
+/*
+.main {
+  background-color: var(--white-text);
+  border: 2px solid aquamarine;
+}
+
+.main__row,
+.section__row {
+  display: flex;
+  padding: 4% 0;
+  gap: 30px;
+  border: 2px solid orange;
+}
+
+.main__item {
+  border: 2px solid purple;
+}
+
+.main__item h2,
+.section__item h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.main__item--purple-text h2 {
+  color: var(--h2-color)
+}
+
+.main__item--gray-text p {
+  color: var(--dark-grey);
+}
+
+.main__item p,
+.section__item p {
+  font-size: 1.5rem;
+  word-spacing: 1px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.section__item--white-text h2, p {
+  color: var(--white)
+}
+
+.section {
+  background-color: var(--secondary-color);
+  border: 2px solid red;
+}
+
+.section__item {
+  border: 2px solid purple;
+}
+
+

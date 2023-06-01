@@ -1,0 +1,308 @@
+/**CSS Normalisation (https://necolas.github.io/normalize.css/) */
+
+/*!========== Universal/Default Settings ==========*/
+html {
+line-height: 1.15;
+/*Correct the line height in all browsers */
+-webkit-text-size-adjust: 100%;
+/*Prevent font-size adjustments after orientation changes (IOS)*/
+}
+
+*,
+body,
+*::before,
+*::after {
+padding: 0;
+margin: 0;
+border: 0;
+/*Remove the margin, padding and border of all elements (all browsers)*/
+font-size: 10px;
+/*10px = 1em -> pixel size/10 = #em (16px=1.6em)*/
+box-sizing: border-box;
+/*The full area/size of an element`s box is measured by its total height and width, not just the content section. The different box sections adjust to the defined box size */
+}
+
+/*!========== Common Elements ==========*/
+main {
+display: block;
+/*Render main element consistently (IE)*/
+}
+
+h1 {
+font-size: 2em;
+margin: 0 0;
+/*Correct font-size and margin for h1 elements within section and article contexts (Chrome, Firefox, Safari) */
+}
+
+img {
+border-style: none;
+/*Remove the border on images inside links (IE10)*/
+max-inline-size: 100%;
+/*Make image responsive but without allowing it to outgrow its original size*/
+}
+
+hr {
+box-sizing: content-box;
+height: 0;
+/*Add the correct box-sizing (Firefox)*/
+overflow: visible;
+/*Show overflow (Edge, IE)*/
+}
+
+pre {
+font-family: monospace, monospace;
+/*Correct the inheritance and scaling of font size in all browsers*/
+font-size: 1em;
+/*Correct the odd em font sizing in all browsers.*/
+}
+
+a {
+background-color: transparent;
+/*Remove the gray background on active links (IE10)*/
+}
+
+a,
+li,
+:link,
+:visited {
+text-decoration: none;
+/*Remove default link underline styling*/
+}
+
+ul,
+ol {
+list-style: none;
+/*List markers are not commonly needed*/
+}
+
+b,
+strong {
+font-weight: bolder;
+/*Add the correct font weight (Chrome, Edge, Safari)*/
+}
+
+/**============================CUSTOM-STYLES================================*/
+/* Fonts
+font-family: 'Playfair Display', serif; (900)
+font-family: 'Roboto', sans-serif; (300, 400)
+*/
+
+body {
+  --beige: #F3EED9;
+  --brown: #824936;
+  --black: #222C2A;
+  --roboto-ff: Roboto, sans-serif;
+  --playfair-ff: 'Playfair Display', serif;
+}
+
+*,
+body {
+padding: 0;
+margin: 0;
+border: 0;
+font-size: 10px;
+box-sizing: border-box;
+}
+
+p {
+  font-family: var(--roboto-ff);
+}
+
+h1, h2 {
+  font-family: var(--playfair-ff);
+}
+
+img {
+  border-style: none;
+  max-inline-size: 100%;
+}
+
+/** MAIN SECTION  */
+
+.main {
+  background-color: var(--beige);
+  min-block-size: 45vh;
+}
+
+.main__fbox-cntr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-block-size: 40vh;
+  max-inline-size: 80vw;
+  margin-inline: auto;
+}
+/*? Just realised, if I stretch out the container - the INNER box - by default this stretches out the OUTER box. I.e., by making flexbox 300px high, I make the 'main' element 300px too. This might be why I had difficulty with creating the beige area in V1 */
+
+.main__text {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.3rem;
+  letter-spacing:6px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.main__header {
+  text-align: center;
+  color: var(--brown);
+  font-size: 5rem;
+  max-inline-size: 1000px;
+  margin-inline: auto;
+}
+
+/** SECTIONS */
+
+.section {
+  min-block-size: 40vh;
+}
+.section__fbox-cntr {
+  min-block-size: 35vh;
+  inline-size: min(1200px, 80vw);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.section__fbox-text-cntr {
+  display: flex;
+  gap: 40px;
+}
+
+.section__header {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--brown);
+  margin-block-end: 4.5rem;
+}
+
+.section__para {
+  font-size: 1.6rem;
+  font-weight: 300;
+  word-spacing: 5px;
+  line-height: 22px;
+  text-align: left;
+}
+
+.section__fbox-rcol, .section__fbox-lcol {
+  max-height: 80%;
+  margin-block: auto;
+  inline-size: 90%;
+  align-items: center;
+}
+
+.section__fbox-rcol {
+  max-height: 80%;
+  margin-block: auto;
+  inline-size: 100%;
+  align-items: center;
+  margin-left: 60px;
+}
+
+/*? ^^ Make flexbox columns 100% to make it easier to get across page alinement.  */
+
+img {
+  border: 1px solid black;
+}
+/*? ^^ Wrap image in a div so it's the div that gets stretched not the image. */
+
+
+/** MODIFIERS */
+
+.section--black {
+  background-color: var(--black);
+}
+
+.section--brown {
+  background-color: var(--brown);
+}
+
+.section__header--beige {
+  color: var(--beige);
+}
+
+.section__para--beige {
+  color: var(--beige);
+}
+
+.section__fbox-cntr--2col {
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+
+
+/** MEDIA QUERIES */
+
+@media (max-width: 600px) {
+
+  .main__header {
+    font-size: 4.5rem;
+  }
+
+  .section__fbox-cntr {
+    padding: 20px;
+  }
+
+  .section__fbox-text-cntr {
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .section__header {
+    margin-block-end: 2.5rem;
+    inline-size: 100%;
+    text-align: center;
+  }
+
+  .section__para {
+    text-align: center;
+    word-spacing: 2px;
+  }
+
+  .section__fbox-rcol, .section__fbox-lcol {
+    max-inline-size: none;
+    inline-size: 100%;
+  }
+
+  .section__fbox-rcol {
+    margin-left: 0;
+  }
+
+  .section__fbox-cntr--2col {
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+  }
+
+  .section__fbox-lcol--image, .section__fbox-rcol--image {
+    padding: 30px 0;
+  }
+
+  #MQ {
+    order: 1;
+  }
+  /*? Applied ID selector to specific flexbox item and changed order number so image appeared last */
+}
+
+@media (min-width: 501px) and (max-width: 750px){
+
+  .main__header {
+    font-size: 4.5rem;
+  }
+
+  .section__fbox-cntr {
+    padding: 20px;
+  }
+
+  .section__header {
+    padding-block-start: 1.3rem;
+  }
+}
+
+
+/*! Problem: getting the text and images to line up exactly.  */

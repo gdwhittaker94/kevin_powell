@@ -1,0 +1,130 @@
+/** ACROSS WHOLE PAGE */  
+
+html{
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  --main-color: #23424A;
+  --white: white;
+  --bright-blue: #38CFD9;
+  --h2-color: #87629A;
+  --secondary-color: #136C72;
+  --dark-grey: #3A3A3A;
+}
+
+.content-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/** HERO SECTION */
+
+.hero {
+  background-color: var(--main-color);
+  border: 2px solid greenyellow;
+}
+
+.hero__container {
+  min-height: 60vh;
+  padding: 7vh 0 0 0;
+  border: 2px solid yellow;
+}
+
+.hero__header {
+  color: var(--white);
+  font-size: 4rem;
+  font-weight: 900;
+  width: 65%;
+  border: 2px solid pink;
+}
+
+.hero__text {
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 400;
+  width: 65%;
+  margin-top: 3%;
+  border: 2px solid red;
+  letter-spacing: 1px;
+}
+
+.hero__button {
+  margin-top: 3%;
+  width: fit-content;
+  color: var(--main-color);
+  border: 2px solid blanchedalmond;
+  background-color: var(--bright-blue);
+  border: none;
+  border-radius: 100px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/** MAIN + SECTION ROWS */
+
+.main {
+  background-color: var(--white-text);
+  border: 2px solid aquamarine;
+}
+
+.main__row,
+.section__row {
+  display: flex;
+  padding: 4% 0;
+  gap: 30px;
+  border: 2px solid orange;
+}
+
+.main__item {
+  border: 2px solid purple;
+}
+
+.main__item h2,
+.section__item h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.main__item--purple-text h2 {
+  color: var(--h2-color)
+}
+
+.main__item--gray-text p {
+  color: var(--dark-grey);
+}
+
+.main__item p,
+.section__item p {
+  font-size: 1.5rem;
+  word-spacing: 1px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.section__item--white-text h2, p {
+  color: var(--white)
+}
+
+.section {
+  background-color: var(--secondary-color);
+  border: 2px solid red;
+}
+
+.section__item {
+  border: 2px solid purple;
+}
+
+

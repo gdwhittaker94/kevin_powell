@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: #23424a;
+  color: white;
+  padding: 100px 0;
+}
+/*? PADDING to hold content in from edges */
+
+
+.intro-content p {
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 3.5rem;
+  margin-bottom: 3em;
+}
+/*? ^^ Used margin-bottom on <p> element instead of adding margin-top on button element in order to create space --> makes button more reusable. */
+
+
+.nav__list--primary {
+  margin: 0 auto;
+}
+/*? ^^ Margin 'auto' for L/R sides in order to center this part of nav bar --> simple solution! */
+
+
+.nav__item {
+  list-style: none;
+  margin-left: 40px;
+}
+/*? ^^ Margin-left for each item to create gaps in between them in nav bar */
+
+
+.main__fbox-cntr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-block-size: 40vh;
+  max-inline-size: 80vw;
+  margin-inline: auto;
+}
+/*? Just realised, if I stretch out the container - the INNER box - by default this stretches out the OUTER box. I.e., by making flexbox 300px high, I make the 'main' element 300px too. This might be why I had difficulty with creating the beige area in V1 */
+
+
+.section__fbox-rcol {
+  max-height: 80%;
+  margin-block: auto;
+  inline-size: 100%;
+  align-items: center;
+  margin-left: 60px;
+}
+/*? ^^ Make flexbox columns 100% to make it easier to get across page alinement.  */
+
+
+
+img {
+  border: 1px solid black;
+}
+/*? ^^ Wrap image in a div so it's the div that gets stretched not the image. */
+
+
+#MQ {
+  order: 1;
+}
+/*? Applied ID selector to specific flexbox item and changed order number so image appeared last on webpage */
+
+
+.nav__list--primary {
+        margin: 0 auto;
+    }
+
+/*? Forgot again: have pushed items to end with 'flex-end' and then use margin L/R 'auto' in order to make this primary list eat up the available space and create margins either side of it. */
